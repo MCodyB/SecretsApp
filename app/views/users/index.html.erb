@@ -1,0 +1,29 @@
+<h1 class="page-name">Users Index</h1>
+<%= javascript_include_tag 'friend-bundle' %>
+<div class="inner-box index-box">
+	<ul class="user-list">
+	<%# friend_ids = @friends %>
+	<% friend_id = @friends.shift %>
+	<% @users.each do |user| %>
+		<% if user != current_user %>
+		<li class="user">
+			<ul class="user-details">
+				<li class="user-link"><%= link_to user.username, user_url(user.id) %></li>
+				
+				<% f_array = friend_button_helper(friend_id, @friends, user) %>
+				<% friend_id, friended = f_array[0], f_array[1] %>
+				<li class="<%= friended ? "button-friended" : "friend-button" %>">Friend
+				<%= form_for [user, @friendship], :remote => true, html: { :class => 'friend-form'}  do |f| %>
+				<%= f.submit %>
+				<% end %>
+				<%= form_for [user,  current_user.friendships.where(:friend_id => user.id)], :url => user_friendship_path, :method => :delete, :remote => true, html: {class: "unfriend"} do |f| %>
+				<%= f.submit %>
+				<!-- :url => user_friendship -->
+				<% end %>
+				</li>
+			</ul>
+		</li>
+		<% end %>
+	<% end %>
+</ul>
+</div>

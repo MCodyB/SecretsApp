@@ -1,0 +1,13 @@
+<h1 class="page-name">New User</h1>
+
+<div class="form-fields inner-box">
+	<%= form_for @user do |f| %>
+	<p class="form-input"><%= f.label :username %>
+	<%= f.text_field :username %></p>
+	<p class="form-input"><%= f.label :password %>
+	<%= f.password_field :password %></p>
+	<p class="form-input"><%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %></p>
+	<p class="form-button"><%= f.submit %></p>
+	<% end %>
+</div>

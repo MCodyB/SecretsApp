@@ -1,0 +1,261 @@
+/*General page alignment*/
+
+
+body { 
+	width: 100%;
+	margin: 0;
+	padding-top: 0;
+ }
+	
+header {
+	height: 150px;
+	margin: 0;
+	padding: 0; }
+
+div.wrapper {
+	height: 100px;
+	background-color: #f2f2f2;
+	width: 100%;
+	padding: 0;
+	margin: 0; }
+	
+div.fixed-nav {
+	position: fixed;
+	height: 35px;
+	left: 0px; }
+
+
+/*Logo*/
+
+div.wrapper > p {
+	text-decoration: none;
+	float: left;
+	width: 140px;
+	font-size: 200%;
+	font-family: sans-serif;
+	padding: 50px 0 5px 0;
+	margin: 0;
+	/*margin-left: auto;
+	margin-right: auto;*/
+}
+
+div.wrapper > p > a {
+	text-decoration: none;
+	color: #0d0f00;
+}
+
+div.wrapper > p > a:hover {
+	color: #c9c9c9;
+}
+
+div.wrapper > p.small-logo {
+	text-decoration: none;
+	float: left;
+	width: 80px;
+	font-size: 115%;
+	font-family: sans-serif;
+	padding: 5px 0 0 4px;
+	margin: 0; }
+	
+/*General Bar CSS*/
+	
+ul.links { 	list-style-type: none; }
+
+ul.links > li > span, ul.links > li > a {
+	display: block;
+	padding: 0 8px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #0d0f00;
+	margin-top: 6px; }
+
+ul.links > li > a:hover {
+	color: #c9c9c9; }
+	
+ul.links > li:last-child {	border-right: 0; }
+
+
+/*Navigation Bar*/
+
+div.navbar {
+	height: 30px;
+	margin: 2px 0 0 0;
+	padding:0; }
+	
+
+div.center-nav {
+	width: 80%;
+	float: left; }
+
+ul.nav {
+	margin: 0;
+	padding: 0;
+	width: 242px;
+	height: 100%;
+	display: block;
+	/*float: left;*/
+	margin-left: auto;
+	margin-right: auto; }
+
+ul.nav > li {
+	display: block;
+	float: left;
+	overflow: auto;
+	width: auto;
+	height: 30px;
+	padding: 0 0 0px 0;
+	margin: 0;
+	border-right: 1px solid #ccc; }
+	
+ul.nav > li > a {
+	padding-bottom: 0px;
+}
+
+/*Sub-Menu*/
+
+/*STOP UNDOING HERE*/
+	
+div.navbar > ul.nav > li > ul/*.drop-menu*/ {
+	display: none;
+	/* Some way to make the dropdown menu white but not transparent,
+	also make the borders not extend all the way to the corners,
+	also the parent menu widens on 'Done Guy' */
+	background-color: 1px solid #f4f0f1;
+	opacity: 1;
+	position: absolute;
+	padding: 0;
+	margin: 0; }
+
+/*div.navbar > ul.nav > li:hover > ul { display: block; }*/
+
+div.navbar > ul.nav > li > ul > li, div.navbar> ul > li > ul > li > a {
+	float: none;
+	margin: 0;}
+ 
+div.navbar > ul.nav > li > ul > li {	
+	display: block;
+	height: 25px;}
+
+div.navbar > ul.nav > li > ul > li > a {
+	display: block;
+	overflow: auto;
+	/*width: 100px;*/
+	height: 20px;
+	padding-top: 5px;
+	border-bottom: 1px solid #ccc; }
+	
+/*Sub-Sub-Menu*/
+
+ul.nav > li > ul > li > ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	left: 100%;
+	top: -100%;
+	border-left: 1px solid #ccc;
+}
+
+ul.nav > li > ul > li > ul > li {
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+	
+}
+
+ul.nav > li > ul > li > ul > li > a {
+	display: block;
+	margin: 0;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+
+/*Utility Bar*/
+
+ul.utility {
+	padding: 0;
+	float: right; }
+
+ul.utility {
+	float: right;
+	list-style-type: none;
+	margin: 10px 10px 0 0;
+	padding: 0;
+	/*margin-top: 10px;
+	margin-right: 7px;*/
+	height: 15px;
+	display: block;
+	/*float: right;*/ }
+
+ul.fixed {
+	position: fixed;
+	top: 10px;
+	right: 5px; }
+	
+ul.utility > li {
+	display: block;
+	font-size: 75%;
+	float: left;
+	overflow: auto;
+	width: auto;
+	height: 15px;
+	padding: 0;
+	margin: 0;
+	border-right: 1px solid #ccc; }
+	
+ul.utility > li > a {
+	margin: 0; }
+	
+/*Utility as Icon*/
+
+ul.dropdown {
+	display: block;
+	margin: 5px 10px 0 0;
+	padding: 2px 1px 0;
+	height: 28px;
+	width: 28px;
+	float: right;
+	background-image: url('Setting-icon.png'); }
+
+ul.dropdown > li {
+	display: none;
+	height: 20px;
+	position: relative;
+	overflow: auto;
+	left: -260%;
+	top: 100%;
+	padding: 0;
+	margin: 0;
+	border-right: 0;
+	border-bottom: 1px solid #ccc; }
+	
+ul.dropdown > li:last-child {
+/*	border-right: 1px solid #ccc;
+*/	/*padding: 0 0 0 30px;*/ }
+
+ul.dropdown > li > a {
+	display: block;
+	float: right;
+	width: 100px;
+	height: 16px;
+	padding-top: 4px;
+	
+	overflow: auto;
+	margin: 0;
+	padding: 0 2px 0 0; }
+
+ul.dropdown:hover > li {
+	display: block; }
+
+/*JUNK FOR DEBUGGING*/
+/*
+	ul { border: 1px solid red }
+
+	ul.links li { 
+		 border: 1px solid blue; }
+		 
+	ul.links li a { border: 1px solid yellow;}
+
+	ul.nav { width: 300 !important;}
+*/

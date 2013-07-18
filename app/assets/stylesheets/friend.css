@@ -1,0 +1,59 @@
+ul {
+	list-style-type: none;
+}
+
+li > form.friend-form, li > form.unfriend { display: none; }
+
+div.index-box, a { 
+	text-decoration: none;
+	color: #212121;
+}
+
+li.user, li.friend-button, li.user-link > a {
+	display: block;
+}
+
+li.user {
+	margin: 20px;
+	border: 1px solid #ccc;
+	height: 50px;
+	width: 300px;
+}
+
+ul.user-details {
+	padding: 0;
+	margin: 0;
+}
+
+ul.user-details > li {
+	padding: 10px 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+li.user-link {
+	width: 61%;
+	background-color: #B8ACF2;
+	margin-left: 5px;
+	margin-right: 2px;
+}
+
+
+li.user > li.user-link > a {
+	text-decoration: none;
+	width: 20%;
+}	
+
+li.friend-button, li.button-friended {
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+li.friend-button { 	background-color: #D1B6CD; }
+
+li.friend-button:hover, li.button-friended:hover {
+	cursor: pointer; cursor: hand;
+}
+
+li.button-friended{ background-color: #696A6E; }
