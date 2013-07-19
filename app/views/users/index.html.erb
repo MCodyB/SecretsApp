@@ -16,9 +16,14 @@
 				<%= form_for [user, @friendship], :remote => true, html: { :class => 'friend-form'}  do |f| %>
 				<%= f.submit %>
 				<% end %>
-				<%= form_for [user,  current_user.friendships.where(:friend_id => user.id)], :url => user_friendship_path, :method => :delete, :remote => true, html: {class: "unfriend"} do |f| %>
+				<!-- This should be an underscore widget? -->
+				<%# friendship = current_user.friendships.find_by_friend_id(user.id)%>
+				<%#= form_for friendship, :method => :delete, :remote => true, html: {class: "unfriend"} do |f| %>
+				<%#= f.submit %>
+				
+				<%= form_for user, :method => :delete, :url => friendship_path, :remote => true, html: {class: "unfriend"} do |f| %>
 				<%= f.submit %>
-				<!-- :url => user_friendship -->
+				
 				<% end %>
 				</li>
 			</ul>

@@ -12,7 +12,8 @@ class FriendshipsController < ApplicationController
   end
   
   def destroy
-    current_user.friendships.where(:friend_id => params[:user_id]).destroy
+    @friendship = Friendship.find(params[:id])
+    @friendship.destroy
     respond_to do |format|
       format.js
     end
