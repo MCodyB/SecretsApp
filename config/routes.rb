@@ -2,7 +2,7 @@ SecretsApp::Application.routes.draw do
   root :to => "users#new"
   resources :users do
     resources :secrets, only: [:new, :create]
-    resources :friendships, only: [:create]
+    resources :friendships, only: [:create, :destroy]
   end
   resources :friendships, only: [:destroy]
   resources :secrets
