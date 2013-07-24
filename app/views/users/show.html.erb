@@ -3,28 +3,31 @@
 <div class="inner-box">
 	<%  if signed_in? && @user != current_user %>
 	<div class="secret-entry">
-		<%#= link_to "Tell a secret", new_user_secret_path(@user, @secret)  %>
 		<%= render partial: "secrets/form", locals: {:author_id => current_user.id, :recipient_id => @user.id} %>
 	</div>
 	<% end %>
-	<% if @user == current_user %>
-		<div class="secret-list" id="recieved">
+	<% if @user == current_user || current_user.id == 1 %>
+		<div class="secrets" id="recieved">
 			<h3>Recieved Secrets</h3>
-			<% @user.recieved_secrets.each do |secret| %>
-			<div class="secret">
-				<p class="recipient-name">
-					<% author = secret.author %>
-					<%= link_to author.username, user_url(author.id) if author %>
-				</p>
-			
-				<p><%= secret.title %></p>
-			</div>
-			<% end %>
+			<ul id="recieved-secrets">
+				<% @user.recieved_secrets.includes(:author).each do |secret| %>
+				<li class="secret">
+					<ul class="secret-details">
+					<li class="recipient-name">
+						<% author = secret.author %>
+						<%= link_to author.username, user_url(author.id) if author %>
+					</li>
+
+					<li class="recipient-secret"><%= secret.title %></li>
+					</ul>
+				</li>
+				<% end %>
+		</ul>
 		</div>
 
-		<div class="secret-list" id="authored">
+		<div class="secrets" id="authored">
 			<h3>Authored Secrets</h3>
-			<% @user.authored_secrets.each do |secret| %>
+			<% @user.authored_secrets.includes(:recipient).each do |secret| %>
 			<div class="secret">
 				<p class="recipient-name">
 					<% recipient = secret.recipient %>
