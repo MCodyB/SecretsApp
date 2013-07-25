@@ -10,18 +10,9 @@
 		<div class="secrets" id="recieved">
 			<h3>Recieved Secrets</h3>
 			<ul id="recieved-secrets">
-				<% @user.recieved_secrets.includes(:author).each do |secret| %>
-				<li class="secret">
-					<ul class="secret-details">
-					<li class="recipient-name">
-						<% author = secret.author %>
-						<%= link_to author.username, user_url(author.id) if author %>
-					</li>
-
-					<li class="recipient-secret"><%= secret.title %></li>
-					</ul>
-				</li>
-				<% end %>
+			<% @user.recieved_secrets.order('created_at DESC').includes(:author).each do |secret| %>
+			<%= render partial: "secrets/recieved", locals: {:secret => secret} %>
+			<% end %>
 		</ul>
 		</div>
 
