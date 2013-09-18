@@ -1,7 +1,7 @@
-class TodoList < ActiveRecord::Base
-  attr_accessible :title
+class TodoItem < ActiveRecord::Base
+  attr_accessible :item, :todo_list_id
   
-  validates :title, presence: true
+  validates :item, :todo_list_id, presence: true
   
-  has_many :todo_items
+  belongs_to :todo_list
 end
